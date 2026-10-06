@@ -127,7 +127,7 @@ export default function BiteInteraction() {
                   <ProductImage
                     src="/images/cupcake-vanilla.png"
                     fallback="/images/placeholders/cupcake-vanilla.svg"
-                    alt="チェリーをのせた、ふわふわのバニラカップケーキ"
+                    alt="淡いピンクのクリームと赤いチェリーをのせたカップケーキ"
                     priority
                     className="h-full w-full object-contain drop-shadow-[0_24px_16px_rgba(98,45,37,0.14)]"
                   />
@@ -140,7 +140,7 @@ export default function BiteInteraction() {
                   <ProductImage
                     src="/images/cupcake-bite-vanilla.png"
                     fallback="/images/placeholders/cupcake-bite-vanilla.svg"
-                    alt="ひとくち食べて、スポンジの断面が見えるバニラカップケーキ"
+                    alt="ひとくち食べてスポンジの断面が見える、淡いピンクのクリームのカップケーキ"
                     priority
                     className="h-full w-full object-contain drop-shadow-[0_24px_16px_rgba(98,45,37,0.14)]"
                   />

@@ -26,6 +26,8 @@ npm run deploy:pages
 
 最初のコマンドは `/cherry-dolly-site` 配下で画像・フォント・JavaScriptが表示されるよう設定して、`out/` に静的サイトを出力します。次のコマンドはGitの `origin` にある `gh-pages` ブランチへ出力を保存します。GitHubへの書き込み権限が必要です。ソースの作業ブランチは変更せず、強制pushも行いません。Pagesの初期設定はGitHubの Settings → Pages で `gh-pages` / `/ (root)` を選択します。
 
+公開用ビルドではPNGの内容から画像URLのバージョンを自動生成するため、同じファイル名で差し替えても以前の画像キャッシュを使い続けません。
+
 通常の開発・本番サーバー起動には、従来どおり `npm run dev` または `npm run build` → `npm start` を使います。
 
 ## 構成
@@ -39,20 +41,20 @@ npm run deploy:pages
 - `components/BrandMessage.tsx` / `Footer.tsx`: ブランドメッセージと締めくくり
 - `components/ui/ProductImage.tsx`: 画像フォールバック
 - `lib/products.ts`: フレーバー名、説明、商品色
-- `public/images`: 差し替え可能な透明背景の仮素材
+- `public/images`: 差し替え可能な透明背景の商品素材
 
 ## 商品画像の差し替え
 
-以下のPNGを同名で置き換えてください。仮素材のPNGも同梱しているため、最初から表示できます。PNGが存在しない場合は `public/images/placeholders/` のSVGに自動で切り替わります。
+以下のPNGを同名で置き換えてください。透明背景の商品素材を同梱しているため、最初から表示できます。PNGが存在しない場合は `public/images/placeholders/` のSVGに自動で切り替わります。
 
 | ファイル | 内容 |
 | --- | --- |
-| `hero-box.png` | Heroの大きな箱 |
-| `packaging-box.png` | 再利用用のパッケージ箱 |
-| `cupcake-vanilla.png` | Cherry Vanilla |
-| `cupcake-lemon.png` | Lemon Cream |
-| `cupcake-strawberry.png` | Strawberry Milk |
-| `cupcake-chocolate.png` | Chocolate Sundae |
+| `hero-box.png` | Heroの持ち手付きピンクの紙箱 |
+| `packaging-box.png` | 再利用用の持ち手付きピンクの紙箱 |
+| `cupcake-vanilla.png` | Cherry Vanilla：淡いピンクのクリーム、赤いチェリー、ピンクのハート柄カップ |
+| `cupcake-lemon.png` | Lemon Cream：淡い黄色のクリーム、レモンスライス、黄色のハート柄カップ |
+| `cupcake-strawberry.png` | Strawberry Milk：ピンクのクリーム、赤いベリー、ピンクのハート柄カップ |
+| `cupcake-chocolate.png` | Chocolate Sundae：チョコクリーム、チョコチップ、小さなピンクのハート、茶色のハート柄カップ |
 | `cupcake-bite-vanilla.png` | ひとくち後の Cherry Vanilla |
 | `cupcake-bite-lemon.png` | ひとくち後の Lemon Cream |
 | `cupcake-bite-strawberry.png` | ひとくち後の Strawberry Milk |
@@ -60,9 +62,13 @@ npm run deploy:pages
 
 カップケーキは6:7、箱は100:76の比率を推奨します。通常画像とbite画像は、同じキャンバスサイズ・構図・位置で揃えてください。biteセクションではバニラのペアを使用しています。PNGを変える場合も透明背景を維持すると重なりと影を活かせます。
 
-見出し・コピー・大きなロゴはHTMLで、商品画像とは別に制御します。想定アセットの `logo-wordmark.png` は必須ではなく、可読性と拡大表示のためHTMLロゴを採用しています。パッケージ面に印刷されたブランド文字は、商品イラストの一部です。
+見出し・コピー・大きなロゴはHTMLで、商品画像とは別に制御します。想定アセットの `logo-wordmark.png` は必須ではなく、可読性と拡大表示のためHTMLロゴを採用しています。パッケージ面に印刷された文字は商品画像の一部です。
 
-フォントはnpmパッケージから配信するため、Google Fontsへの接続は不要です。仮イラストは本プロジェクト用に作成しています。
+同梱PNGは、ユーザー提供のポスターを参照してAIで再構成した、写真風の透明背景素材です。商品ごとの色、トッピング、ハート柄のカップと、淡いピンクの持ち手付き紙箱を参照しています。ひとくち後のPNGも、通常画像と対になる透明背景素材です。箱の面にある小文字の `sucre` は参照したパッケージの印刷を引き継いでいます。サイトのHTMLロゴ・コピーと商品名は Cherry Dolly の設定を使用します。
+
+`public/images/placeholders/` のSVGは、初期実装時に本プロジェクト用に作成した独自の仮イラストです。PNGの参照素材とは別に、画像未配置時の表示を保つために残しています。
+
+フォントはnpmパッケージから配信するため、Google Fontsへの接続は不要です。
 
 ## 動きとアクセシビリティ
 

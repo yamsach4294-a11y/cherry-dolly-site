@@ -55,7 +55,7 @@ export default function FeaturedSection() {
             <ProductImage
               src="/images/cupcake-vanilla.png"
               fallback="/images/placeholders/cupcake-vanilla.svg"
-              alt="高く絞ったバニラのバタークリームに、赤いチェリーをのせたカップケーキ"
+              alt="高く絞った淡いピンクのバタークリームに、赤いチェリーをのせたハート柄のカップケーキ"
               className="relative z-10 aspect-square w-full object-contain drop-shadow-[0_24px_18px_rgba(57,74,50,0.12)]"
             />
 

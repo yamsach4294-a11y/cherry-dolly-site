@@ -33,17 +33,17 @@ export default function Hero() {
       <motion.div className="hero-wordmark pointer-events-none absolute z-0 w-full text-center font-logo text-cherry" style={{ y: reduced ? 0 : logoY }} aria-hidden="true">Cherry Dolly</motion.div>
       <motion.div className="hero-box absolute z-10" style={{ y: reduced ? 0 : boxY }}>
         <motion.div animate={reduced ? { y: 0, rotate: -8 } : { y: [0, -14, 0], rotate: [-8, -6, -8] }} initial={{ rotate: -8 }} transition={reduced ? { duration: 0 } : { duration: 7, ease: "easeInOut", repeat: Infinity }}>
-          <ProductImage src="/images/hero-box.png" fallback="/images/placeholders/hero-box.svg" alt="ピンクとミントの装飾をあしらった、クリーム色の Cherry Dolly カップケーキボックス" priority className="w-full drop-shadow-[0_34px_25px_rgba(124,54,58,0.15)]" />
+          <ProductImage src="/images/hero-box.png" fallback="/images/placeholders/hero-box.svg" alt="ピンクの持ち手が付いた、カップケーキ入りの淡いピンクの紙箱" priority className="w-full drop-shadow-[0_34px_25px_rgba(124,54,58,0.15)]" />
         </motion.div>
       </motion.div>
       <motion.div className="hero-cake hero-cake-vanilla absolute z-20" style={{ y: reduced ? 0 : cakeY }}>
         <motion.div animate={reduced ? { y: 0, rotate: -10 } : { y: [0, -12, 0], rotate: [-10, -6, -10] }} initial={{ rotate: -10 }} transition={reduced ? { duration: 0 } : { duration: 5.8, ease: "easeInOut", repeat: Infinity }}>
-          <ProductImage src="/images/cupcake-vanilla.png" fallback="/images/placeholders/cupcake-vanilla.svg" alt="チェリーをのせた、ふわふわのバニラバタークリームカップケーキ" priority />
+          <ProductImage src="/images/cupcake-vanilla.png" fallback="/images/placeholders/cupcake-vanilla.svg" alt="淡いピンクのクリームと赤いチェリーをのせた、ハート柄のカップケーキ" priority />
         </motion.div>
       </motion.div>
       <motion.div className="hero-cake hero-cake-strawberry absolute z-20" style={{ y: reduced ? 0 : cakeY }}>
         <motion.div animate={reduced ? { y: 0, rotate: 13 } : { y: [0, 11, 0], rotate: [13, 9, 13] }} initial={{ rotate: 13 }} transition={reduced ? { duration: 0 } : { duration: 6.6, ease: "easeInOut", repeat: Infinity }}>
-          <ProductImage src="/images/cupcake-strawberry.png" fallback="/images/placeholders/cupcake-strawberry.svg" alt="カラースプレーを散らした、ピンクのストロベリーミルクカップケーキ" priority />
+          <ProductImage src="/images/cupcake-strawberry.png" fallback="/images/placeholders/cupcake-strawberry.svg" alt="ピンクのクリームに赤いベリーをのせた、ハート柄のカップケーキ" priority />
         </motion.div>
       </motion.div>
       <Sparkle className="absolute top-[47%] left-[39%] z-20 h-9 w-9 text-cherry/75 max-md:top-[35%] max-md:left-[7%] max-md:h-6 max-md:w-6" />
